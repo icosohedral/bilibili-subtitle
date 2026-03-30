@@ -2,7 +2,6 @@ import { useCallback, useEffect } from 'react'
 import Waiter from '../../utils/Waiter'
 import Layer1Protocol from '../layer1/Layer1Protocol'
 import { sendHandshakeFromApp } from '../messagingUtil'
-import { useAsyncEffect } from 'ahooks'
 import { AppMessage, L2ReqMsg, L2ResMsg, MethodContext } from '../typings'
 
 const debug = (...args: any[]) => {
@@ -78,12 +77,19 @@ const useMessagingService = <AllAPPMessagesType extends AppMessage>(usePort: boo
   }, [messageHandler])
 
   // port
-  useAsyncEffect(async () => {
-    if (messageHandler && usePort) {
-      l1protocol = new Layer1Protocol<L2ReqMsg, L2ResMsg>(messageHandler)
-      // 初始化
-      sendHandshakeFromApp(l1protocol)
-      l1protocolInit = true
+  useEffect(() => {
+    if (!messageHandler || !usePort) {
+      return
+    }
+
+    l1protocol = new Layer1Protocol<L2ReqMsg, L2ResMsg>(messageHandler)
+    sendHandshakeFromApp(l1protocol)
+    l1protocolInit = true
+
+    return () => {
+      l1protocol?.dispose()
+      l1protocol = undefined
+      l1protocolInit = false
     }
   }, [messageHandler, usePort])
 }

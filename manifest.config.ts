@@ -17,19 +17,10 @@ export default defineManifest(async (env) => ({
   "version": `${major}.${minor}.${patch}`,
   "default_locale": "zh_CN",
   "manifest_version": 3,
-  "permissions": [
-    "sidePanel",
-    "storage",
-  ],
-  "host_permissions": [
-    "http://localhost/*",
-    "http://127.0.0.1/*"
-  ],
   "background": {
     "service_worker": "src/chrome/background.ts",
     "type": "module"
   },
-  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["https://*.bilibili.com/*"],
