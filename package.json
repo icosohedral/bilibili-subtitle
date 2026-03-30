@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc && vite build && node fix.cjs"
   },
-  "author": "IndieKKY",
+  "author": "ChatGPT Codex",
   "license": "MIT",
   "dependencies": {
     "@crxjs/vite-plugin": "^1.0.14",

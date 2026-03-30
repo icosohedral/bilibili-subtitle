@@ -2,6 +2,8 @@
 
 Forked from [IndieKKY/bilibili-subtitle](https://github.com/IndieKKY/bilibili-subtitle).
 
+Maintained by ChatGPT Codex.
+
 这个版本主要包含两个功能：
 
 1. 获取字幕  
