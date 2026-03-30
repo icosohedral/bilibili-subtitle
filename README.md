@@ -20,6 +20,8 @@ Forked from [IndieKKY/bilibili-subtitle](https://github.com/IndieKKY/bilibili-su
 - 下载字幕为 `txt` 或 `json`
 - 基于字幕内容检测视频是否属于“吸引注意力/提升停留导向”的脚本化表达
 - 支持配置 AI 接口、模型，以及是否显示逐项详细判断
+- 支持开启“有字幕时自动检测”
+- 支持按需隐藏字幕列表，仅保留检测结果
 
 ## 开发
 
