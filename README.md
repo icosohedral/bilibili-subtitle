@@ -1,5 +1,7 @@
 ## 简介
 
+Forked from [IndieKKY/bilibili-subtitle](https://github.com/IndieKKY/bilibili-subtitle).
+
 这个版本聚焦两个功能：在哔哩哔哩视频页获取字幕，以及基于字幕做内容风格检测。
 
 当前支持：
